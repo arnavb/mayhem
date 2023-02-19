@@ -2,7 +2,7 @@ import ChatContainer from "./ChatContainer";
 
 const MainNavbar = () => {
   return (
-    <div className="flex bg-gray-600 w-full pl-4 pr-2 pt-3 pb-3 items-center">
+    <div className="flex w-full items-center bg-gray-600 pl-4 pr-2 pt-3 pb-3">
       <span className="text-white"># general</span>
     </div>
   );
@@ -10,7 +10,7 @@ const MainNavbar = () => {
 
 const Main = () => {
   return (
-    <div className="w-3/4 flex flex-col">
+    <div className="flex w-3/4 flex-col">
       <MainNavbar />
       <ChatContainer />
     </div>

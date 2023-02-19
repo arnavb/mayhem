@@ -1,7 +1,7 @@
 const ServerIcon = ({ letter, color }: { letter: string; color: string }) => {
   return (
     <div
-      className={`rounded-full w-14 aspect-square ${color} flex flex-col justify-center items-center m-2`}
+      className={`aspect-square w-14 rounded-full ${color} m-2 flex flex-col items-center justify-center`}
     >
       {letter}
     </div>
@@ -10,7 +10,7 @@ const ServerIcon = ({ letter, color }: { letter: string; color: string }) => {
 
 const ServerList = () => {
   return (
-    <div className="w-1/4 bg-black flex flex-col items-center">
+    <div className="flex w-1/4 flex-col items-center bg-black">
       <ServerIcon letter="A" color="bg-red-100" />
       <ServerIcon letter="B" color="bg-blue-100" />
       <ServerIcon letter="C" color="bg-green-100" />

@@ -3,7 +3,7 @@ import PeopleList from "./PeopleList";
 
 const ChatContainer = () => {
   return (
-    <div className="flex-grow flex">
+    <div className="flex flex-grow">
       <MessageContainer />
       <PeopleList />
     </div>
