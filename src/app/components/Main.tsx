@@ -2,8 +2,8 @@ import ChatContainer from "./ChatContainer";
 
 const MainNavbar = () => {
   return (
-    <div className="flex w-full items-center bg-gray-600 pl-4 pr-2 pt-3 pb-3">
-      <span className="text-white"># general</span>
+    <div className="flex w-full items-center border-b pl-4 pr-2 pt-3 pb-3">
+      <span># general</span>
     </div>
   );
 };

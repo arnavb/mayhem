@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen bg-gray-900 text-white">
       <Sidebar />
       <Main />
     </div>
