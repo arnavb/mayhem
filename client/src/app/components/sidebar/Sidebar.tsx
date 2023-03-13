@@ -1,4 +1,4 @@
-import ChannelList from "./channels/ChannelListContainer";
+import ChannelList from "./ChannelListContainer";
 import ServerList from "./ServerList";
 
 const Sidebar = () => {
