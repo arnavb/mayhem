@@ -1,3 +1,5 @@
+import InputContainer from "./InputContainer";
+
 interface MessageObject {
   id: number;
   sender: string;
@@ -35,10 +37,13 @@ const Message = ({ obj }: MessageProps) => {
 
 const MessageContainer = () => {
   return (
-    <div className="w-3/4">
-      {messages.map((message) => (
-        <Message key={message.id} obj={message} />
-      ))}
+    <div className="flex h-full w-3/4 flex-col">
+      <div className="flex-1">
+        {messages.map((message) => (
+          <Message key={message.id} obj={message} />
+        ))}
+      </div>
+      <InputContainer />
     </div>
   );
 };
