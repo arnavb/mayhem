@@ -26,7 +26,9 @@ CREATE TABLE "Message" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "content" TEXT NOT NULL,
     "channelId" INTEGER NOT NULL,
-    CONSTRAINT "Message_channelId_fkey" FOREIGN KEY ("channelId") REFERENCES "Channel" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+    "authorId" INTEGER,
+    CONSTRAINT "Message_channelId_fkey" FOREIGN KEY ("channelId") REFERENCES "Channel" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "Message_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 -- CreateTable
