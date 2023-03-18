@@ -17,16 +17,18 @@ model User {
   usernameString String /// Represents the first part of a username
   usernameDigits String /// Represents the last part of a username (esactly 4 digits)
   profilePicture String? /// Contains link to profile picture (external cdn)
+  createdAt      DateTime  @default(now())
   servers        Server[] /// A user belongs to many servers
   messages       Message[] /// A user has many messages
 }
 
 /// Represents a server, which has channels, users
 model Server {
-  id       Int       @id @default(autoincrement())
-  name     String
-  channels Channel[]
-  users    User[]
+  id        Int       @id @default(autoincrement())
+  name      String
+  createdAt DateTime  @default(now())
+  channels  Channel[]
+  users     User[]
 }
 
 /// Represents a channel, which belongs to a server
@@ -40,10 +42,11 @@ model Channel {
 
 /// Represents a message, which belongs to a channel and a user
 model Message {
-  id        Int     @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   content   String
-  channel   Channel @relation(fields: [channelId], references: [id])
+  createdAt DateTime @default(now())
+  channel   Channel  @relation(fields: [channelId], references: [id])
   channelId Int
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  Int?
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
 }
