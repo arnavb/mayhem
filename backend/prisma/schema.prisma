@@ -12,12 +12,13 @@ datasource db {
 
 /// Represents a single user who has usernames of the form username#XXXX where username is a String and XXXX are 4 digits
 model User {
-  id             Int      @id @default(autoincrement())
-  email          String   @unique
+  id             Int       @id @default(autoincrement())
+  email          String    @unique
   usernameString String /// Represents the first part of a username
   usernameDigits String /// Represents the last part of a username (esactly 4 digits)
   profilePicture String? /// Contains link to profile picture (external cdn)
   servers        Server[] /// A user belongs to many servers
+  messages       Message[] /// A user has many messages
 }
 
 /// Represents a server, which has channels, users
@@ -43,4 +44,6 @@ model Message {
   content   String
   channel   Channel @relation(fields: [channelId], references: [id])
   channelId Int
+  author    User?   @relation(fields: [authorId], references: [id])
+  authorId  Int?
 }
