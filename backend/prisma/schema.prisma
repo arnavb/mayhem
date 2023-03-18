@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// Represents a single user who has usernames of the form username#XXXX where username is a String and XXXX are 4 digits
+model User {
+  id             Int      @id @default(autoincrement())
+  email          String   @unique
+  usernameString String /// Represents the first part of a username
+  usernameDigits String /// Represents the last part of a username (esactly 4 digits)
+  profilePicture String? /// Contains link to profile picture (external cdn)
+  servers        Server[] /// A user belongs to many servers
+}
+
+/// Represents a server, which has channels, users
+model Server {
+  id       Int       @id @default(autoincrement())
+  name     String
+  channels Channel[]
+  users    User[]
+}
+
+/// Represents a channel, which belongs to a server
+model Channel {
+  id       Int       @id @default(autoincrement())
+  name     String
+  server   Server    @relation(fields: [serverId], references: [id])
+  serverId Int
+  messages Message[]
+}
+
+/// Represents a message, which belongs to a channel and a user
+model Message {
+  id        Int     @id @default(autoincrement())
+  content   String
+  channel   Channel @relation(fields: [channelId], references: [id])
+  channelId Int
+}
