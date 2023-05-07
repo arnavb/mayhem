@@ -15,7 +15,7 @@ model User {
   id             Int       @id @default(autoincrement())
   email          String    @unique
   usernameString String /// Represents the first part of a username
-  usernameDigits String /// Represents the last part of a username (esactly 4 digits)
+  usernameDigits String /// Represents the last part of a username (exactly 4 digits)
   profilePicture String? /// Contains link to profile picture (external cdn)
   createdAt      DateTime  @default(now())
   servers        Server[] /// A user belongs to many servers
