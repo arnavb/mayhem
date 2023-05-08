@@ -3,9 +3,6 @@ import { prisma } from "../db";
 
 /**
  * Find a user by their username (e.g username#1234)
- * @param usernameString
- * @param usernameDigits
- * @returns
  */
 export async function findUserByUsername(
   usernameString: string,
@@ -16,9 +13,6 @@ export async function findUserByUsername(
 
 /**
  * Create a new user
- * @param email
- * @param usernameString
- * @param usernameDigits
  */
 export async function createUser(
   email: string,
@@ -30,8 +24,6 @@ export async function createUser(
 
 /**
  * Adds a profile picture to an existing user
- * @param id
- * @param profilePicture
  */
 export async function addProfilePicture(
   id: number,
