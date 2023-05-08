@@ -1,6 +1,22 @@
 import fastify from "fastify";
+import websocket from "@fastify/websocket";
 
 const server = fastify();
+
+server.register(websocket);
+
+server.register(async function (fastify) {
+  fastify.get("/ws", { websocket: true }, (connection, _) => {
+    connection.socket.on("message", (message) => {
+      console.log(`Received ${message}`);
+      connection.socket.send("hello from fastify!");
+    });
+
+    connection.socket.on("close", (code, reason) => {
+      console.log(`Connection closed with ${code} and reason ${reason}`);
+    });
+  });
+});
 
 server.get("/", async () => {
   return "Hello, World!";
