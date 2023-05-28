@@ -3,7 +3,7 @@ import ServerList from "./ServerList";
 
 const Sidebar = () => {
   return (
-    <div className="flex w-1/4 shrink-0 border-r">
+    <div className="flex w-1/4 shrink-0">
       <ServerList />
       <ChannelList />
     </div>
