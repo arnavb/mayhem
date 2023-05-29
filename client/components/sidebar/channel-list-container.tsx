@@ -1,6 +1,6 @@
 const ChannelServerName = ({ name }: { name: string }) => {
   return (
-    <div className="flex w-full items-center pl-4 pr-2 pt-3 pb-3">
+    <div className="flex w-full items-center border-b-2 border-neutral-400 bg-neutral-300 pl-4 pr-2 pt-3 pb-3">
       <span>{name}</span>
     </div>
   );

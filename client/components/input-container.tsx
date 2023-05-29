@@ -17,7 +17,8 @@ const InputContainer = () => {
     <div className="h-20 p-4">
       <input
         type="text"
-        className="h-10 w-full appearance-none px-2 text-black"
+        placeholder="Say something..."
+        className="h-12 w-full appearance-none border border-neutral-400 px-2 text-black"
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
         onKeyUp={handleMessageSubmit}

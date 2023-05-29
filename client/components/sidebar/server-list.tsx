@@ -1,19 +1,24 @@
-const ServerIcon = ({ letter, color }: { letter: string; color: string }) => {
+import { randomPlaceholderImage } from "lib/random-placeholder-image";
+import Image from "next/image";
+
+const ServerIcon = ({ src }: { src: string }) => {
   return (
-    <div
-      className={`aspect-square w-14 rounded-full ${color} m-2 flex flex-col items-center justify-center`}
-    >
-      {letter}
-    </div>
+    <Image
+      width={100}
+      height={100}
+      className="m-2 h-14 w-14 rounded-full"
+      src={src}
+      alt=""
+    />
   );
 };
 
 const ServerList = () => {
   return (
-    <div className="flex w-1/4 flex-col items-center">
-      <ServerIcon letter="A" color="bg-red-500" />
-      <ServerIcon letter="B" color="bg-blue-500" />
-      <ServerIcon letter="C" color="bg-green-500" />
+    <div className="flex w-1/4 flex-col items-center bg-neutral-400">
+      <ServerIcon src={randomPlaceholderImage()} />
+      <ServerIcon src={randomPlaceholderImage()} />
+      <ServerIcon src={randomPlaceholderImage()} />
     </div>
   );
 };

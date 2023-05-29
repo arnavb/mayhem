@@ -1,3 +1,5 @@
+import { randomPlaceholderImage } from "lib/random-placeholder-image";
+import Image from "next/image";
 import InputContainer from "./input-container";
 
 interface MessageObject {
@@ -26,7 +28,13 @@ const messages: MessageObject[] = [
 const Message = ({ obj }: MessageProps) => {
   return (
     <div className="m-4 flex">
-      <div className="mr-2 aspect-square h-12 w-12 rounded-full bg-purple-500"></div>
+      <Image
+        className="mr-2 h-12 w-12 rounded-full"
+        src={randomPlaceholderImage()}
+        alt=""
+        width={100}
+        height={100}
+      />
       <div>
         <div className="pr-2">{obj.sender}:</div>
         <div>{obj.message}</div>
@@ -37,7 +45,7 @@ const Message = ({ obj }: MessageProps) => {
 
 const MessageContainer = () => {
   return (
-    <div className="flex h-full w-3/4 flex-col">
+    <div className="flex h-full w-3/4 flex-col bg-neutral-100">
       <div className="flex-1">
         {messages.map((message) => (
           <Message key={message.id} obj={message} />
