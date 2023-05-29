@@ -1,5 +1,5 @@
-import Main from "../components/main";
-import Sidebar from "../components/sidebar/sidebar";
+import Main from "components/main";
+import Sidebar from "components/sidebar/sidebar";
 
 export const metadata = {
   title: "Mayhem",
