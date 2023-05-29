@@ -1,5 +1,5 @@
-import Main from "../components/Main";
-import Sidebar from "../components/sidebar/Sidebar";
+import Main from "../components/main";
+import Sidebar from "../components/sidebar/sidebar";
 
 export const metadata = {
   title: "Mayhem",
@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex h-screen ">
+    <div className="flex h-screen">
       <Sidebar />
       <Main />
     </div>

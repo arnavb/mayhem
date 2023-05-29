@@ -1,4 +1,4 @@
-import InputContainer from "./InputContainer";
+import InputContainer from "./input-container";
 
 interface MessageObject {
   id: number;

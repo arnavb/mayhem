@@ -1,4 +1,4 @@
-import ChatContainer from "./ChatContainer";
+import ChatContainer from "./chat-container";
 
 const MainNavbar = () => {
   return (

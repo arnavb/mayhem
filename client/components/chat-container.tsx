@@ -1,5 +1,5 @@
-import MessageContainer from "./MessageContainer";
-import PeopleList from "./PeopleList";
+import MessageContainer from "./message-container";
+import PeopleList from "./people-list";
 
 const ChatContainer = () => {
   return (
