@@ -15,7 +15,7 @@ const ServerIcon = ({ src }: { src: string }) => {
 
 const ServerList = () => {
   return (
-    <div className="flex w-1/4 flex-col items-center bg-neutral-400">
+    <div className="w-20 shrink-0 bg-neutral-400">
       <ServerIcon src={randomPlaceholderImage()} />
       <ServerIcon src={randomPlaceholderImage()} />
       <ServerIcon src={randomPlaceholderImage()} />

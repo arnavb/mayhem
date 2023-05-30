@@ -1,5 +1,5 @@
 import Main from "components/main";
-import Sidebar from "components/sidebar/sidebar";
+import ServerChannelContainer from "components/server-channel-container";
 
 export const metadata = {
   title: "Mayhem",
@@ -7,8 +7,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex h-screen">
-      <Sidebar />
+    <div className="flex h-full flex-1">
+      <ServerChannelContainer />
       <Main />
     </div>
   );

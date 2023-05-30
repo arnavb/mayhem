@@ -1,4 +1,4 @@
-const ChannelServerName = ({ name }: { name: string }) => {
+const ServerName = ({ name }: { name: string }) => {
   return (
     <div className="flex w-full items-center border-b-2 border-neutral-400 bg-neutral-300 pl-4 pr-2 pt-3 pb-3">
       <span>{name}</span>
@@ -25,13 +25,13 @@ const ChannelList = () => {
   );
 };
 
-const ChannelListContainer = () => {
+const ServerChannelContainer = () => {
   return (
-    <div className="w-3/4">
-      <ChannelServerName name="Server Name" />
+    <div className="w-64 bg-neutral-300">
+      <ServerName name="Server Name" />
       <ChannelList />
     </div>
   );
 };
 
-export default ChannelListContainer;
+export default ServerChannelContainer;

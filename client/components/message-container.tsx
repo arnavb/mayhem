@@ -45,7 +45,7 @@ const Message = ({ obj }: MessageProps) => {
 
 const MessageContainer = () => {
   return (
-    <div className="flex h-full w-3/4 flex-col bg-neutral-100">
+    <div className="flex h-full flex-1 flex-col bg-neutral-100">
       <div className="flex-1">
         {messages.map((message) => (
           <Message key={message.id} obj={message} />
