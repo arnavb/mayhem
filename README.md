@@ -15,6 +15,8 @@ Overall:
       TBD.
     - Use something based on NextAuth.js, backend integration TBD.
     - Tokens? JWT?
+  - Ideas:
+    - https://github.com/nextauthjs/next-auth/discussions/1290#discussioncomment-3339772
 
 Frontend:
 
